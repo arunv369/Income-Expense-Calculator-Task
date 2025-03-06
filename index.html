@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Income Expense Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div class="max-w-2xl mx-auto p-6 rounded-lg shadow-md bg-white">
+      <h2 class="font-[Righteous] text-3xl font-bold text-center mb-4">
+        Income Expense Calculator
+      </h2>
+
+      <div class="flex justify-between text-lg font-semibold mb-4 mt-10">
+        <p class="font-[Saira]">
+          Total Income:
+          <span id="total-income" class="font-[Overlock] text-green-600"
+            >0</span
+          >
+        </p>
+        <p class="font-[Saira]">
+          Total Expense:
+          <span id="total-expense" class="font-[Overlock] text-red-600">0</span>
+        </p>
+        <p class="font-[Saira]">
+          Net Balance:
+          <span id="net-balance" class="font-[Overlock] text-blue-600">0</span>
+        </p>
+      </div>
+
+      <form id="transaction-form" class="space-y-2">
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          class="font-[Saira] w-full p-2 border rounded"
+          required
+        />
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount"
+          class="font-[Saira] w-full p-2 border rounded"
+          required
+        />
+        <select id="type" class="font-[Saira] w-full p-2 border rounded">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+        <button
+          type="submit"
+          id="submit-btn"
+          class="font-[Saira] w-full bg-[#F98080] text-white p-2 rounded"
+        >
+          Add Transaction
+        </button>
+
+        <button
+          type="button"
+          id="reset-form-btn"
+          class="font-[Saira] w-full bg-[#1F2937] text-white p-2 rounded"
+        >
+          Reset Form
+        </button>
+      </form>
+
+      <div class="mt-4">
+        <label class="font-[Saira]"
+          ><input type="radio" name="filter" value="all" checked /> All</label
+        >
+        <label class="font-[Saira] ml-3"
+          ><input type="radio" name="filter" value="income" /> Income</label
+        >
+        <label class="font-[Saira] ml-3"
+          ><input type="radio" name="filter" value="expense" /> Expense</label
+        >
+      </div>
+
+      <ul id="transaction-list" class="font-[Overlock] mt-4 space-y-2"></ul>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
